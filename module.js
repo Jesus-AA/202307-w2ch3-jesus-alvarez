@@ -34,8 +34,3 @@ export const arrayIndexOf = (value, array, index) => {
 
   return -1;
 };
-
-const arrayTestNum = [0, 1, 5, 7, 8, 9, 10, 30, 5, 8, 9, 22, 45, 6];
-
-console.log(arrayTestNum.indexOf(90, 4));
-console.log(arrayIndexOf(90, arrayTestNum, 4));
