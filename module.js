@@ -7,8 +7,22 @@ export const arrayLength = (array) => {
   return counter;
 };
 
-export const arrayIndexOf = (value, array) => {
+export const arrayIndexOf = (value, array, index) => {
   let counter = -1;
+
+  if (index) {
+    counter = index;
+    const maxLength = arrayLength(array);
+
+    for (let i = index; i < maxLength; i++) {
+      if (array[i] === value) {
+        return counter;
+      }
+
+      counter += 1;
+    }
+  }
+
   for (const item of array) {
     counter++;
     if (item === value) {
@@ -18,8 +32,3 @@ export const arrayIndexOf = (value, array) => {
 
   return -1;
 };
-
-const dog = "Jessy";
-const testArray = ["Kubo", "Maca", "Wish", "Jessy"];
-console.log(testArray.indexOf("Jessy"));
-console.log(arrayIndexOf("Jessy", testArray));
