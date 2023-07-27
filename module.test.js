@@ -11,11 +11,18 @@ const numToLookFor2 = 90;
 const indexPosition = 2;
 const indexPosition2 = 8;
 const indexPosition3 = -1;
+
 const pushNewLength = 5;
 const pushNewLength2 = 6;
 
 test("With the arrayTestNum the length should be 13 ", () => {
   expect(arrayLength(arrayTestNum)).toBe(resultArrayTestNum);
+});
+
+describe("When it is call the arrayLength function ", () => {
+  test("With the array arrayTestNum the length should be 13", () => {
+    expect(arrayLength(arrayTestNum)).toBe(resultArrayTestNum);
+  });
 });
 
 test("With the arrayTestStrings the length should be 3 ", () => {
@@ -36,4 +43,12 @@ test("With the arrayIndexOf the value should be -1 ", () => {
 
 test("With the arrayPush the value should be 5 ", () => {
   expect(arrayPush(arrayPushFunction, 3)).toBe(pushNewLength);
+});
+
+test("With the arrayPush the value should be 6 ", () => {
+  const value1 = 3;
+  const value2 = 4;
+  const arrayTryOut = [1, 2, 3, 4];
+  const expectedValuePushFunction = arrayPush(arrayTryOut, value1, value2);
+  expect(expectedValuePushFunction).toBe(pushNewLength2);
 });
