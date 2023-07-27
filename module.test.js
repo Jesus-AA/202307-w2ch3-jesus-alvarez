@@ -1,7 +1,8 @@
-import { arrayIndexOf, arrayLength } from "./module.js";
+import { arrayIndexOf, arrayLength, arrayPush } from "./module.js";
 
 const arrayTestNum = [0, 1, 5, 7, 8, 9, 10, 30, 5, 8, 9, 22, 45, 6];
 const arrayTestStrings = ["Hola", "Mundo", "ISDI"];
+const arrayPushFunction = [1, 2, 3, 4];
 
 const resultArrayTestNum = 14;
 const resultArrayTestStrings = 3;
@@ -10,6 +11,8 @@ const numToLookFor2 = 90;
 const indexPosition = 2;
 const indexPosition2 = 8;
 const indexPosition3 = -1;
+const pushNewLength = 5;
+const pushNewLength2 = 6;
 
 test("With the arrayTestNum the length should be 13 ", () => {
   expect(arrayLength(arrayTestNum)).toBe(resultArrayTestNum);
@@ -29,4 +32,8 @@ test("With the arrayIndexOf the value should be 8 ", () => {
 
 test("With the arrayIndexOf the value should be -1 ", () => {
   expect(arrayIndexOf(numToLookFor2, arrayTestNum, 3)).toBe(indexPosition3);
+});
+
+test("With the arrayPush the value should be 5 ", () => {
+  expect(arrayPush(arrayPushFunction, 3)).toBe(pushNewLength);
 });

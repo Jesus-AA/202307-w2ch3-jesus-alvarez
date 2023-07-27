@@ -34,3 +34,15 @@ export const arrayIndexOf = (value, array, index) => {
 
   return -1;
 };
+
+export const arrayPush = (array, ...value) => {
+  const arrayOfElements = value;
+
+  for (const item of arrayOfElements) {
+    const arrayLengthNum = arrayLength(array);
+    array[arrayLengthNum] = item;
+  }
+
+  const newLength = arrayLength(array);
+  return newLength;
+};
